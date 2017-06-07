@@ -121,20 +121,28 @@ body {
   }
 }
 
+@keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+}
 
 .loading {
   &:before{
-    content:"";
-    position:absolute;
-    top: 0;
-    right: 0;
-    bottom:0;
-    left: 0;
-    margin:auto;
-    width: 50px;
-    height: 50px;
-    background-color: $colorweb;
-    animation: sk-rotateplane 1.2s infinite ease-in-out;
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #07d;
+    border-bottom-color: #07d;
+    animation: spinner .8s ease infinite;
   }
 
   @keyframes sk-rotateplane {

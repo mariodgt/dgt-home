@@ -8,7 +8,7 @@
     $ventana.on('load', function() {
         // Mostrando la primera imagen y activando el slider del Main
         if ($cuerpo.hasClass('home')) {
-            apareceImagen($lisSlider.eq(0)); 
+            //apareceImagen($lisSlider.eq(0)); 
         }
     });
 
@@ -31,7 +31,7 @@
             }
             
             $lisSlider.eq(0).addClass('active').siblings().removeClass('active');
-            //apareceImagen($lisSlider.eq(0));
+            apareceImagen($lisSlider.eq(0));
             
             // creando Bullets
             var $bltsSliderMain = $sliderMain.find('.bullets');
@@ -150,73 +150,5 @@
         })
     }
 
-
-    // Funciones Útiles
-    function touchSlider(ulSlider, botonesNav) {
-        var xDown = null;
-        var yDown = null;
-        ulSlider.on('touchstart', function(evt) {
-            xDown = evt.touches[0].clientX;
-            yDown = evt.touches[0].clientY;
-        });
-        ulSlider.on('touchmove', function(evt) {
-            if (!xDown || !yDown) {
-                return;
-            }
-            var xUp = evt.touches[0].clientX;
-            var yUp = evt.touches[0].clientY;
-            var xDiff = xDown - xUp;
-            var yDiff = yDown - yUp;
-            if (Math.abs(xDiff) > Math.abs(yDiff)) { // si se mueve derecha o izquierda
-                evt.preventDefault();
-                ulSlider.trigger('mouseenter');
-                var nLis = botonesNav.length;
-                var $elLiActivo = itemActivo(botonesNav);
-                if (xDiff > 0) { // izquierda
-                    if (($elLiActivo + 1) !== nLis) {
-                        botonesNav.eq($elLiActivo + 1).trigger('click');
-                        ulSlider.trigger('mouseleave');
-                    } else {
-                        botonesNav.eq(0).trigger('click');
-                        ulSlider.trigger('mouseleave');
-                    }
-                } else { // derecha
-                    if ($elLiActivo !== 0) {
-                        botonesNav.eq($elLiActivo - 1).trigger('click');
-                        ulSlider.trigger('mouseleave');
-                    }
-                }
-            }
-            xDown = null;
-            yDown = null;
-        });
-    }
-
-    function itemActivo(losLi) { // refactorizar esto (nueva idea para la función).
-        var nLis = losLi.length;
-        for (var s = 0; s < nLis; s++) {
-            if (losLi.eq(s).hasClass('active')) {
-                return s;
-            }
-        }
-    }
-    
-    function creaBullets(numeroLis, contentBullets) {
-        if (contentBullets.length) {
-            // borro los botones previos que existan.
-            if (contentBullets.find('> *').length) {
-                contentBullets.empty();
-            }
-            // Creo los botones
-            var b = 0;
-            while (b < numeroLis) {
-                contentBullets.append('<button></button>');
-                b++
-            }
-        } else {
-            console.log('El contenedor .NAV no existe, no puedo crear los botones de navegación.');
-        }
-    }
-    
 
 }());

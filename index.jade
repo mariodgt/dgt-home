@@ -13,7 +13,7 @@ html(lang='en')
 		link(rel="stylesheet", href="https://file.myfontastic.com/v6vr22zQVKSnTWTxBBpbWC/icons.css")
 		link(rel="stylesheet", href="css/main.css")
 
-	body.loading.home
+	body.home
 		include header.jade
 		main#main
 			#slideHome.fade
@@ -23,48 +23,43 @@ html(lang='en')
 						.w-featured
 							.gwr
 								button(data-video="https://www.youtube.com/watch?v=9RBSH7Xvn3Q").open-video: span
-								.details
-									h2 Contemporary Luxury Oasis
+								a(href="#", title="#").details
+									h2 Contemporary Luxury Oasis 01
 									span 212 W. Dilido Drive
 									ul
 										li 3 beds
 										li 2 Baths
 										li 4200 SF
-								a(href="#", title="#").view-home View Home
 						img(original-src="images/home/bg-home01.jpg", alt="#", title="#").bg-slider
 					li
 						.w-featured
 							.gwr
-
 								button(data-video="https://www.youtube.com/watch?v=9RBSH7Xvn3Q").open-video: span
-								.details
-									h2 Contemporary Luxury Oasis
+								a(href="#", title="#").details
+									h2 Contemporary Luxury Oasis 02
 									span 212 W. Dilido Drive
 									ul
 										li 3 beds
 										li 2 Baths
 										li 4200 SF
-								a(href="#", title="#").view-home View Home
 						img(original-src="images/home/bg-home02.jpg", alt="#", title="#").bg-slider
 					li
 						.w-featured
 							.gwr
-
 								button(data-video="https://www.youtube.com/watch?v=9RBSH7Xvn3Q").open-video: span
-								.details
-									h2 Contemporary Luxury Oasis
+								a(href="#", title="#").details
+									h2 Contemporary Luxury Oasis 03
 									span 212 W. Dilido Drive
 									ul
 										li 3 beds
 										li 2 Baths
 										li 4200 SF
-								a(href="#", title="#").view-home View Home
-						img(original-src="images/home/bg-home03.jpg", alt="#", title="#").bg-slider
+						img(original-src="images/home/bg-home04.jpg", alt="#", title="#").bg-slider
 				.nav
-					.bullets
-					.next-prev
-						button.prev: span.icon-arrow
-						button.next: span.icon-arrow
+				.bullets
+				.next-prev
+					button(rel="prev").prev: span.icon-arrow ❮
+					button(rel="next").next: span.icon-arrow ❯
 			button.next-section: span.icon-arrow
 
 		include footer.jade
