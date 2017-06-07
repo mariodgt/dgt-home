@@ -3,15 +3,15 @@
     var $cuerpo = $('body');
     var $htmlcuerpo = $('html, body');
     var $transitionTime = 6500;
-
-
+    
+    
     $ventana.on('load', function() {
         // Mostrando la primera imagen y activando el slider del Main
         if ($cuerpo.hasClass('home')) {
             //apareceImagen($lisSlider.eq(0)); 
         }
     });
-
+    
     
     // Slider del main (Home)
     var $sliderMain = $('#slideHome');
@@ -138,8 +138,8 @@
             $sliderMain.find('.nav').css('display', 'none');
         }
     };
-
-
+    
+    
     // Boton para subir al top de la web
     var $toUp = $('#toup');
     if ($toUp.length) {
@@ -149,6 +149,6 @@
             }, 800);
         })
     }
-
-
+    
+    
 }());

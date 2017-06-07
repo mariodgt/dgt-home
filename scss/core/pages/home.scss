@@ -78,10 +78,12 @@ $colorhover: #ccc;
 
                 .open-video {
                     background-color: transparent;
+                    border: 0;
                     border-right: 1px solid #fff;
                     height: 50px;
                     width: 70px;
                     margin-right: .8rem;
+                    appearance: none;
                     span {
                         position: relative;
                         display: block;
@@ -136,6 +138,7 @@ $colorhover: #ccc;
                     align-items: flex-start;
                     flex-direction: column;
                     margin-right: auto;
+                    margin-left: 0;
                     h2 {
                         color: #fff;
                         font-size: .9em;
@@ -146,6 +149,7 @@ $colorhover: #ccc;
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
+                        margin-left: 0;
 
                         transform: translateX(150px);
                         transition: all 800ms cubic-bezier(0.26, 1.48, 0.47, 0.96) 350ms;
@@ -161,6 +165,7 @@ $colorhover: #ccc;
                         text-overflow: ellipsis;
                         overflow: hidden;
                         white-space: nowrap;
+                        margin-left: 0;
 
                         transform: translateX(100px);
                         opacity: 0;
@@ -172,6 +177,7 @@ $colorhover: #ccc;
                         align-items: center;
                         color: #fff;
                         margin-bottom: 10px;
+                        margin-left: 0;
 
 
                         transform: translateY(50px);
@@ -337,6 +343,8 @@ $colorhover: #ccc;
             border-radius: 50%;
             box-shadow: 0 1px 1px #858585;
             transition: all .3s ease;
+            appearance: none;
+            border: none;
             &.active {
                 background-color: $colorweb;
             }
